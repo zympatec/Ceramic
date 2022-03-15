@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main" parallel="tests" >
+    <test name="Validating user login">
+        <classes>
+            <class name="authorization.positiveTests.ValidUserAuthTest">
+                <methods>
+                    <exclude name="clearCookiesAndLocalStorage"></exclude>
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+    <test name="Invalid user login">
+        <classes>
+        <class name="authorization.negativeTests.InvalidUserAuthTest">
+            <methods>
+                <exclude name="clearCookiesAndLocalStorage"></exclude>
+            </methods>
+        </class>
+        </classes>
+    </test>
+    <test name="Buy one product with authorized user">
+        <classes>
+            <class name="ordering.positiveTests.authorizedUser.OnePositionTest">
+            <methods>
+                <exclude name="clearCookiesAndLocalStorage"></exclude>
+            </methods>
+        </class>
+        </classes>
+    </test>
+</suite>
